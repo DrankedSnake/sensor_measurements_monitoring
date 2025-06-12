@@ -1,0 +1,16 @@
+services:
+  log_producer:
+
+  success_log_consumer:
+
+  error_log_consumer:
+  success_log_analyzer:
+
+  error_log_analyzer:
+
+  success_log_db:
+  error_log_db:
+  kafka_logs:
+
+  networks:
+    - logs_network
