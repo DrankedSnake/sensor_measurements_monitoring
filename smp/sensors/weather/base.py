@@ -1,6 +1,7 @@
-from smp.sensors.abstract import AbstractSensor
-from smp.sensors.enums.sensor_state import State
-from smp.sensors.enums.sensor_type import Type
+from sensors.abstract import AbstractSensor
+from sensors.enums.sensor_state import State
+from sensors.enums.sensor_type import Type
+from sensors.enums.unit import Unit
 
 
 class Base(AbstractSensor):
@@ -12,3 +13,4 @@ class Base(AbstractSensor):
         self._type = Type.WEATHER
         self._state = State.ON
         self._value = None
+        self._unit: Unit = None
