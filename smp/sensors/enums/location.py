@@ -3,6 +3,8 @@ from __future__ import annotations
 from enum import Enum
 from typing import List
 
+from sensors.enums.sensor_type import Type
+
 
 class Location(Enum):
     # Weather Sensor Locations
@@ -24,7 +26,7 @@ class Location(Enum):
     ATTIC = "Attic"
     PERIMETER = "Perimeter"
 
-    def weather_sensors() -> List[Location]:
+    def __weather_sensors() -> List[Location]:
         return [
             Location.OUTDOOR,
             Location.INDOOR,
@@ -34,7 +36,7 @@ class Location(Enum):
             Location.POOL_AREA,
         ]
 
-    def security_sensors() -> List[Location]:
+    def __security_sensors() -> List[Location]:
         return [
             Location.FRONT_DOOR,
             Location.BACK_DOOR,
@@ -46,3 +48,5 @@ class Location(Enum):
             Location.ATTIC,
             Location.PERIMETER,
         ]
+    def sensors(self, sensor_type: Type) -> List[Location]:
+        return self.__weather_sensors() if sensor_type == Type.WEATHER else self.__security_sensors()

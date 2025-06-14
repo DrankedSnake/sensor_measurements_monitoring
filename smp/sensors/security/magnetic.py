@@ -10,8 +10,6 @@ class MagneticSensor(Base):
         self._unit = Unit.MAGNETIC
 
     def read(self):
-        self._value = self._random_value(self._range)
-        self._datetime = self._datetime_now()
-        self._location = self._random_location(Location.security_sensors())
+        self._set_random_value()
 
         return self._serialize(self._to_dict())

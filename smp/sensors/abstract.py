@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 from enum import Enum
 from typing import Callable, List
+import uuid
 
 from sensors.enums.location import Location
 from sensors.enums.sensor_state import State
@@ -17,6 +18,8 @@ class AbstractSensor(ABC):
     """
 
     def __init__(self):
+        self._state = State.ON
+        self._id: uuid.UUID = uuid.uuid4()
         self._type: Type = None
         self._state: State = None
         self._value: float = None
@@ -43,10 +46,12 @@ class AbstractSensor(ABC):
         for key, value in data.items():
             if isinstance(value, datetime):
                 data[key] = value.isoformat()
-            if isinstance(value, Enum):
+            elif isinstance(value, Enum):
                 data[key] = value.value
-            if isinstance(value, range):
+            elif isinstance(value, range):
                 data[key] = (value.start, value.stop)
+            elif isinstance(value, uuid.UUID):
+                data[key] = str(value)
 
         return json.dumps(data)
 
@@ -68,6 +73,17 @@ class AbstractSensor(ABC):
         """
         return float(random.randint(value_range.start, value_range.stop))
 
+    def _set_random_value(self):
+        """
+        Set a random value for the sensor within its range.
+        """
+        self._value = self._random_value(self._range)
+        _type = self._type
+        print(_type)
+        locations = Location.sensors(_type)
+        self._location = self._random_location(locations)
+        self._datetime = self._datetime_now()
+    
     @abstractmethod
     def read(self):
         """

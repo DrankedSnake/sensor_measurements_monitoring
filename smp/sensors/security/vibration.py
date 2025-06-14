@@ -10,8 +10,6 @@ class VibrationSensor(Base):
         self._range = range(0, 100)  # Assuming vibration level is from 0 to 100
         
     def read(self):
-        self._value = self._random_value(self._range)
-        self._location = self._random_location(Location.security_sensors())
-        self._datetime = self._datetime_now()
+        self._set_random_value()
         
         return self._serialize(self._to_dict())

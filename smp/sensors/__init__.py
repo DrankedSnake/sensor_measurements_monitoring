@@ -7,3 +7,13 @@ from .security import (
     VibrationSensor,
     SmartLockSensor,
 )
+from .weather import (
+    AnemometerSensor,
+    BarometricPressureSensor,
+    HumiditySensor,
+    RainSensor,
+    SolarRadiationSensor,
+    TemperatureSensor,
+    UVSensor,
+    VisibilitySensor,
+)

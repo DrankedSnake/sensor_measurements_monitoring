@@ -10,6 +10,14 @@ from sensors import (
     PressureSensor,
     VibrationSensor,
     SmartLockSensor,
+    AnemometerSensor,
+    BarometricPressureSensor,
+    HumiditySensor,
+    RainSensor,
+    SolarRadiationSensor,
+    TemperatureSensor,
+    UVSensor,
+    VisibilitySensor,
 )
 
 
@@ -24,6 +32,15 @@ class SensorProvider:
             PressureSensor(),
             VibrationSensor(),
             SmartLockSensor(),
+            AnemometerSensor(),
+            BarometricPressureSensor(),
+            HumiditySensor(),
+            RainSensor(),
+            SolarRadiationSensor(),
+            TemperatureSensor(),
+            UVSensor(),
+            VisibilitySensor(),
+            
         ]
 
     def sensor(self):
