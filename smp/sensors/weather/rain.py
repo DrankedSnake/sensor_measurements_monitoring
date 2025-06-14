@@ -10,7 +10,7 @@ class RainSensor(Base):
         
 
     def read(self) -> str:
-        self._unit = random.choice([Unit.RAIN_MM, Unit.RAIN_INCHES])
+        self._unit = Unit.RAIN
         self._set_random_value()
 
         return self._serialize(self._to_dict())

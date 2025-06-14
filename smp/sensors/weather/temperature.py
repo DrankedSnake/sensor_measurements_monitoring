@@ -8,9 +8,9 @@ class TemperatureSensor(Base):
         super().__init__()
         
     def read(self) -> str:
-        self._set_random_value()
-        self._unit = random.choice([Unit.TEMPERATURE_CELSIUS, Unit.TEMPERATURE_FAHRENHEIT])
-        self._range = range(-30, 50) if self._unit == Unit.TEMPERATURE_CELSIUS else range(-22, 122)
+        self._unit = random.choice([Unit.TEMPERATURE_C, Unit.TEMPERATURE_F])
+        self._range = range(-30, 50) if self._unit == Unit.TEMPERATURE_C else range(-22, 122)
         self._value = random.randint(self._range.start, self._range.stop - 1)
+        self._set_random_value()
                 
         return self._serialize(self._to_dict())

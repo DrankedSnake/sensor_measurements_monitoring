@@ -78,10 +78,7 @@ class AbstractSensor(ABC):
         Set a random value for the sensor within its range.
         """
         self._value = self._random_value(self._range)
-        _type = self._type
-        print(_type)
-        locations = Location.sensors(_type)
-        self._location = self._random_location(locations)
+        self._location = self._random_location(Location.sensors(self._type))
         self._datetime = self._datetime_now()
     
     @abstractmethod

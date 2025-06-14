@@ -26,27 +26,31 @@ class Location(Enum):
     ATTIC = "Attic"
     PERIMETER = "Perimeter"
 
-    def __weather_sensors() -> List[Location]:
+    @classmethod
+    def __weather_sensors(cls) -> List[Location]:
         return [
-            Location.OUTDOOR,
-            Location.INDOOR,
-            Location.ROOFTOP,
-            Location.GARDEN,
-            Location.BALCONY,
-            Location.POOL_AREA,
+            cls.OUTDOOR,
+            cls.INDOOR,
+            cls.ROOFTOP,
+            cls.GARDEN,
+            cls.BALCONY,
+            cls.POOL_AREA,
         ]
 
-    def __security_sensors() -> List[Location]:
+    @classmethod
+    def __security_sensors(cls) -> List[Location]:
         return [
-            Location.FRONT_DOOR,
-            Location.BACK_DOOR,
-            Location.GARAGE,
-            Location.LIVING_ROOM,
-            Location.BEDROOM,
-            Location.KITCHEN,
-            Location.BASEMENT,
-            Location.ATTIC,
-            Location.PERIMETER,
+            cls.FRONT_DOOR,
+            cls.BACK_DOOR,
+            cls.GARAGE,
+            cls.LIVING_ROOM,
+            cls.BEDROOM,
+            cls.KITCHEN,
+            cls.BASEMENT,
+            cls.ATTIC,
+            cls.PERIMETER,
         ]
-    def sensors(self, sensor_type: Type) -> List[Location]:
-        return self.__weather_sensors() if sensor_type == Type.WEATHER else self.__security_sensors()
+        
+    @classmethod
+    def sensors(cls, sensor_type: Type) -> List[Location]:
+        return cls.__weather_sensors() if sensor_type == Type.WEATHER else cls.__security_sensors()
