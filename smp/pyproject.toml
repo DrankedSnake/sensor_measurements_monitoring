@@ -1,3 +1,10 @@
+[tool.poetry]
+name = "sensor_measurements_monitoring"
+version = "0.1.0"
+description = "A project for monitoring sensor measurements"
+authors = ["Nikita Limarchuk <nikita.limarchuk@gmail.com>"]
+license = "MIT"
+
 [project]
 name = "smp"
 version = "0.1.0"
