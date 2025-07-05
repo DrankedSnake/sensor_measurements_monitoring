@@ -7,7 +7,6 @@ class RainSensor(Base):
     def __init__(self):
         super().__init__()
         self._range = range(0, 1)
-        
 
     def read(self) -> str:
         self._unit = Unit.RAIN

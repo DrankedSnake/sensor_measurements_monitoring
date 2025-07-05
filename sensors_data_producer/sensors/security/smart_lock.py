@@ -8,8 +8,8 @@ class SmartLockSensor(Base):
         super().__init__()
         self._range = range(0, 1)
         self._unit = Unit.LOCK
-        
+
     def read(self):
         self._set_random_value()
-        
+
         return self._serialize(self._to_dict())

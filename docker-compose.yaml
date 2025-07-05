@@ -34,10 +34,10 @@ services:
   log_producer:
     build:
       context: .
-      dockerfile: smp/docker/Dockerfile
+      dockerfile: sensors_data_producer/docker/Dockerfile
     container_name: log_producer
     volumes:
-      - ./smp:/app
+      - ./sensors_data_producer:/app
     working_dir: /app
     command: python producer.py
     environment:

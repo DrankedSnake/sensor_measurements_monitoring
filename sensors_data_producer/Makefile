@@ -11,10 +11,8 @@ help:
 	@echo "$(YELLOW)Available targets:$(RESET)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "$(GREEN)%-30s$(RESET) %s\n", $$1, $$2}'
 
-run: ## Run the application cluster
-	@echo "$(YELLOW)Running the application cluster...$(RESET)"
-	docker compose up --build
+format:
+	poetry run black . --line-length 120
 
-run_producer: ## Run the producer service
-	@echo "$(YELLOW)Running the producer service...$(RESET)"
-	docker compose up --build log_producer
+lint:
+	poetry run flake8 . --config=pyproject.toml

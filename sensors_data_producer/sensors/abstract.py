@@ -29,10 +29,7 @@ class AbstractSensor(ABC):
         self._datetime: datetime = None
 
     def _to_dict(self) -> dict:
-        return {
-            self._check_attributes(key, value): value
-            for key, value in self.__dict__.items()
-        }
+        return {self._check_attributes(key, value): value for key, value in self.__dict__.items()}
 
     def _check_attributes(self, key, value) -> str:
         if isinstance(value, Callable):
@@ -80,7 +77,7 @@ class AbstractSensor(ABC):
         self._value = self._random_value(self._range)
         self._location = self._random_location(Location.sensors(self._type))
         self._datetime = self._datetime_now()
-    
+
     @abstractmethod
     def read(self):
         """

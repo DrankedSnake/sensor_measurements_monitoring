@@ -14,5 +14,5 @@ class LightSensor(Base):
         Simulate reading the light sensor value.
         """
         self._set_random_value()
-        
+
         return self._serialize(self._to_dict())

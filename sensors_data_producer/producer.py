@@ -74,7 +74,7 @@ if __name__ == "__main__":
                 # print(f"Generated data: {data}")
 
                 serialized_data = json.dumps(data)
-                # print(f"Serialized data: {serialized_data}") 
+                # print(f"Serialized data: {serialized_data}")
 
                 producer.produce(
                     topic="sensor-data",

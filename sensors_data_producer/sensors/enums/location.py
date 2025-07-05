@@ -50,7 +50,7 @@ class Location(Enum):
             cls.ATTIC,
             cls.PERIMETER,
         ]
-        
+
     @classmethod
     def sensors(cls, sensor_type: Type) -> List[Location]:
         return cls.__weather_sensors() if sensor_type == Type.WEATHER else cls.__security_sensors()

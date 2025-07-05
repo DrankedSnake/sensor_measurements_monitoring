@@ -23,7 +23,7 @@ RUN curl -sSL https://install.python-poetry.org | python3 - --version 2.1.3
 WORKDIR /app
 
 # Copy the project files
-COPY ./smp /app
+COPY ./sensors_data_producer /app
 
 # Install dependencies using Poetry
 RUN poetry install --no-root

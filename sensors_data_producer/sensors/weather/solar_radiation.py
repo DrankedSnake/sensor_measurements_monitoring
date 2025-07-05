@@ -11,5 +11,5 @@ class SolarRadiationSensor(Base):
     def read(self) -> str:
         self._unit = random.choice([Unit.SOLAR_WATTS_PER_M2, Unit.SOLAR_BTUS_PER_FT2])
         self._set_random_value()
-        
+
         return self._serialize(self._to_dict())

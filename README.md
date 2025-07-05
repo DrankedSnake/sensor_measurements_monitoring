@@ -1,8 +1,8 @@
 # Project for logs analyzing ecosystem
 
-* [Errors logs analyzer](./error_log_anilyzer/README.md)
-* [Success logs analyzer](./success_log_anilyzer/README.md)
-* [Log producer](./log_producer/README.md)
+* [Weather measurements analyzer](./wms/README.md)
+* [Security measurements analyzer](./gms/README.md)
+* [Sensor measurements producer](./log_producer/README.md)
 
 ## Run cluster
 ```

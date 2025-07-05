@@ -11,5 +11,5 @@ class MotionSensor(Base):
 
     def read(self) -> str:
         self._set_random_value()
-        
+
         return self._serialize(self._to_dict())
